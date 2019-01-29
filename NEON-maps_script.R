@@ -13,7 +13,7 @@ library(mapdata)
 
 ##DATA SUMMARY
 head(surData)
-
+  #Returns number of sites in Northeast Domain
 nrow(surData[surData$Domain.Name == 'Northeast',])
 
 
@@ -52,9 +52,3 @@ fish <- ggplot() + geom_polygon(data = usa, aes(x=long, y = lat, group = group),
   geom_point(data = surData2, aes(x = as.numeric(Long), y = as.numeric(Lat), size = Fish_Samples), alpha = 0.4) +
   theme_void()
 fish
-#Beetles map
-beetles <- ggplot() + geom_polygon(data = usa, aes(x=long, y = lat, group = group), fill = 'white', color = 'blue') + 
-  coord_fixed(1.3) +
-  geom_point(data = surData2, aes(x = as.numeric(Long), y = as.numeric(Lat), size = Beetle_Samples), alpha = 0.4) +
-  theme_void()
-beetles
